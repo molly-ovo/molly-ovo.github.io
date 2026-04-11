@@ -19,15 +19,15 @@
   <meta name="author" content="Molly">
   <meta name="keywords" content="">
   
-    <meta name="description" content="本文通过 Node.js 脚本修改 HTML 渲染逻辑，使浏览器在每次加载页面时实时随机选择图片，个人称之为“暴力注入式修改”">
+    <meta name="description" content="通过 Node.js 脚本修改 HTML 渲染逻辑，使浏览器在每次加载页面时实时随机选择图片，个人称之为“暴力注入式修改”">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Fluid：实现 banner 图片随页面刷新而切换">
 <meta property="og:url" content="http://example.com/2026/04/11/Fluid%EF%BC%9A%E5%AE%9E%E7%8E%B0-banner-%E5%9B%BE%E7%89%87%E9%9A%8F%E9%A1%B5%E9%9D%A2%E5%88%B7%E6%96%B0%E9%9A%8F%E6%9C%BA%E5%88%87%E6%8D%A2/index.html">
 <meta property="og:site_name" content="Molly&#39;s Blog">
-<meta property="og:description" content="本文通过 Node.js 脚本修改 HTML 渲染逻辑，使浏览器在每次加载页面时实时随机选择图片，个人称之为“暴力注入式修改”">
+<meta property="og:description" content="通过 Node.js 脚本修改 HTML 渲染逻辑，使浏览器在每次加载页面时实时随机选择图片，个人称之为“暴力注入式修改”">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-04-11T04:04:27.000Z">
-<meta property="article:modified_time" content="2026-04-11T07:12:29.709Z">
+<meta property="article:modified_time" content="2026-04-11T07:13:58.050Z">
 <meta property="article:author" content="Molly">
 <meta property="article:tag" content="Fluid">
 <meta property="article:tag" content="Hexo">
@@ -395,7 +395,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="random-banner的实现"><a href="#random-banner的实现" class="headerlink" title="random-banner的实现"></a>random-banner的实现</h1><p>本文通过 Node.js 脚本修改 HTML 渲染逻辑，使浏览器在每次加载页面时实时随机选择图片，个人称之为“暴力注入式修改”。</p>
+                <h1 id="random-banner的实现"><a href="#random-banner的实现" class="headerlink" title="random-banner的实现"></a>random-banner的实现</h1><p>通过 Node.js 脚本修改 HTML 渲染逻辑，使浏览器在每次加载页面时实时随机选择图片，个人称之为“暴力注入式修改”。</p>
 <h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>代码使用 Hexo 的 <code>after_render:html</code> 过滤器。该功能在 Markdown 转化为 HTML 后介入，通过修改 HTML 字符串，在 <code>&lt;/body&gt;</code> 标签前插入一段 JavaScript 脚本。</p>
 <p>该脚本会执行以下操作：</p>
 <ol>
