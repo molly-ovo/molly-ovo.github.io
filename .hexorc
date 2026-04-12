@@ -1,0 +1,8 @@
+# Hexo 一键清理生成部署
+alias hup='npx hexo clean && npx hexo g -d'
+
+# Hexo 本地预览
+alias hcs='npx hexo clean && npx hexo s'
+
+# Hexo 新建文章
+alias hn='npx hexo new'

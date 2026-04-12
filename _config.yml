@@ -1,0 +1,125 @@
+# 网站的基本信息
+title: Molly's Blog               # 网站标题
+subtitle: ''             # 网站副标题
+description: ''          # 网站描述（用于 SEO 和首页 meta）
+keywords: null           # 网站关键词（多个关键词用逗号分隔）
+author: Molly         # 默认作者名称
+language: zh-CN             # 网站语言（例如 zh-CN）
+timezone: ''             # 网站时区（留空则使用系统时区）
+
+# URL 设置
+url: http://example.com  # 网站主域名（必须包含协议）
+permalink: ':year/:month/:day/:title/'   # 文章永久链接格式
+permalink_defaults: null                 # 永久链接中各段的默认值
+pretty_urls:
+  trailing_index: true   # 是否在目录链接后添加 index.html
+  trailing_html: true    # 是否在文章链接后保留 .html
+
+# 目录设置（源文件、输出文件等）
+source_dir: source       # 源文件目录（存放文章、页面等）
+public_dir: public       # 生成的静态文件输出目录
+tag_dir: tags            # 标签页面目录
+archive_dir: archives    # 归档页面目录
+category_dir: categories # 分类页面目录
+code_dir: downloads/code # 代码下载目录
+i18n_dir: ':lang'        # 国际化语言子目录
+skip_render: null        # 跳过渲染的文件或目录（使用 glob 表达式）
+
+# Hexo All Minifier 配置
+all_minifier:
+  enable: true
+  
+  # 1. 核心修复：关闭 HTML 压缩，保护标题 ID 和二级目录
+  html_minifier:
+    enable: false 
+    
+  # 2. 核心修复：关闭 JS/CSS 压缩，保护你的随机 Banner 脚本
+  css_minifier:
+    enable: false
+  js_minifier:
+    enable: false
+
+  # 3. 图片压缩配置：包含随机图和 nvpu.jpg
+  image_minifier:
+    enable: true
+    optimizationLevel: 2 # 1-7, 2级兼顾速度与画质
+    # 路径基于 public 目录，确保覆盖到你的所有需求
+    include: 
+      - 'img/random/*'      # 随机图文件夹
+      - 'img/nvpu.jpg'      # 特指根目录下的这张大图
+    # 排除关键图标，防止模糊
+    exclude:
+      - 'img/avatar.png'
+      - 'img/fluid.png'
+      - 'img/W.jpg'  
+
+
+# 文章模板设置
+new_post_name: ':title.md'   # 新建文章时的默认文件名格式
+default_layout: post         # 默认布局（post、page、draft）
+titlecase: false             # 是否自动将标题转换为标题格式
+
+# 外部链接处理
+external_link:
+  enable: true          # 是否在新标签页打开外部链接
+  field: site           # 作用范围（site 全站，post 仅文章）
+  exclude: ''           # 排除不需要处理的域名（留空则无）
+
+# 文件名大小写转换
+filename_case: 0        # 将文件名转换为小写（0-不转换，1-小写，2-大写）
+render_drafts: false    # 是否渲染草稿（预览时需设为 true）
+post_asset_folder: false # 是否为每篇文章创建资源文件夹
+relative_link: false    # 是否使用相对链接（建议 false）
+future: true            # 是否显示未来日期的文章
+
+# 代码高亮设置（使用 highlight.js）
+syntax_highlighter: highlight.js   # 可选：highlight.js 或 prismjs
+highlight:
+  line_number: true      # 是否显示行号
+  auto_detect: false     # 是否自动检测语言（开启会影响性能）
+  tab_replace: ''        # 将 tab 替换为指定空格数（留空则不替换）
+  wrap: true             # 是否自动换行
+  hljs: false            # 是否使用 hljs 类（用于兼容 highlight.js 主题）
+
+# Prism.js 高亮设置（若使用 prismjs）
+prismjs:
+  preprocess: true       # 是否预处理代码块
+  line_number: true      # 是否显示行号
+  tab_replace: ''        # tab 替换为空格数
+
+# 首页文章生成器
+index_generator:
+  path: ''               # 首页路径（默认空，即根目录）
+  per_page: 10           # 每页显示文章数量
+  order_by: '-date'      # 排序方式（-date 表示按日期倒序）
+
+# 默认分类和标签
+default_category: uncategorized  # 没有分类的文章默认归类
+category_map: null               # 分类别名映射
+tag_map: null                    # 标签别名映射
+
+# 元数据生成器
+meta_generator: true     # 是否生成 meta 标签（Open Graph 等）
+
+# 日期与时间格式
+date_format: YYYY-MM-DD  # 日期显示格式
+time_format: HH:mm:ss    # 时间显示格式
+updated_option: mtime    # 文章更新时间的依据（mtime 文件修改时间，date 文章日期）
+
+# 分页设置
+per_page: 10             # 每页显示的文章数量（全局默认）
+pagination_dir: page     # 分页目录名称（例如 /page/2/）
+
+# 包含/排除文件（相对于 source_dir）
+include: null            # 额外包含的文件（数组或 glob）
+exclude: null            # 排除的文件
+ignore: null             # 忽略的文件
+
+# 主题设置
+theme: fluid            # 使用的主题名称（对应 themes/ 下的文件夹名）
+
+# 部署设置（这里使用 Git 部署到 GitHub Pages）
+deploy:
+  type: git              # 部署类型（git）
+  repo: git@github.com:molly-ovo/molly-ovo.github.io.git   # 仓库地址（SSH）
+  branch: main           # 部署分支（通常是 main 或 gh-pages）
